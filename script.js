@@ -45,6 +45,13 @@ function showView(viewId) {
 
     // Scroll cleanly to the top
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Refresh AOS animations for the newly visible elements
+    setTimeout(() => {
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    }, 100);
 }
 
 // Function to return to the Entry Selection Mode
