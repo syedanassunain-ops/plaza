@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaza Party Hall | Caterers | Tent House</title>
+    <link rel="stylesheet" href="style.css?v=6">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ENTRY POPUP / WELCOME SCREEN -->
+    <div id="entry-screen" class="entry-screen active">
+        <div class="entry-container fade-in appear">
+            <h1 class="entry-title">Welcome to <span style="color:var(--primary-color)">Plaza</span></h1>
+            <p class="entry-subtitle">Please select a service to explore</p>
+
+            <div class="entry-grid">
+                <!-- Select Hall -->
+                <div class="entry-card" onclick="showView('view-hall')">
+                    <img src="images/photo1.jpg" alt="Party Hall">
+                    <div class="entry-overlay">
+                        <i class="fa-solid fa-building"></i>
+                        <h3>Party Hall Venue</h3>
+                        <p>Explore our premium hall spaces</p>
+                    </div>
+                </div>
+
+                <!-- Select Catering -->
+                <div class="entry-card" onclick="showView('view-catering')">
+                    <img src="images/media__1775113440843.jpg" alt="Catering">
+                    <div class="entry-overlay">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                        <h3>Plaza Caterers</h3>
+                        <p>View menus & food options</p>
+                    </div>
+                </div>
+
+                <!-- Select Tent House -->
+                <div class="entry-card" onclick="showView('view-tent')">
+                    <img src="images/tent_floral_stage.jpg" alt="Tent House">
+                    <div class="entry-overlay">
+                        <i class="fa-solid fa-chair"></i>
+                        <h3>Tent House & Decor</h3>
+                        <p>Furniture & Stage setups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GLOBAL HEADER (Visible inside the views) -->
+    <header id="main-header" class="header hidden">
+        <div class="container nav-container" style="justify-content: space-between;">
+            <a href="#" class="logo" onclick="showEntry()" style="padding:0;">
+                <img src="logo.png" alt="Plaza Logo"
+                    style="height: 80px; width: 80px; object-fit: cover; border-radius: 50%;">
+            </a>
+            <div style="display:flex; gap: 15px; align-items:center;">
+                <button class="btn btn-outline-light nav-btn" onclick="showEntry()"><i
+                        class="fa-solid fa-arrow-left"></i> Change Service</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ============================================== -->
+    <!-- VIEW 1: PARTY HALL                             -->
+    <!-- ============================================== -->
+    <main id="view-hall" class="view hidden">
+
+        <!-- Hall Hero -->
+        <section class="hero">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="images/party hall opening video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Plaza Party Hall</h1>
+                <p>Your ultimate destination for weddings & grand celebrations.<br>Spacious, clean, and elegant spaces
+                    mapped beautifully for your needs.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+918971525559" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+                    <a href="https://wa.me/918971525559?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20booking%20the%20Hall."
+                        target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+                    <a href="#enquiry-hall" class="btn btn-enquire" onclick="scrollToForm(event, 'enquiry-hall')"><i
+                            class="fa-solid fa-pen-to-square"></i> Enquire Now</a>
+                    <a href="https://www.google.com/maps/search/Plaza+Party+Hall+Bangalore/" target="_blank"
+                        class="btn btn-google"><i class="fa-brands fa-google"></i> See Our Reviews</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section class="about-us section-padding bg-white" data-aos="fade-up">
+            <div class="container text-center">
+                <h2 class="section-title">Our <span>Story</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-desc"
+                    style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; color: #555;">
+                    Established in 1996, Plaza Party Hall has grown from a humble beginning into one of the most trusted
+                    names in hospitality. With over two decades of experience, we specialize in offering stunning
+                    venues, lip-smacking catering services, and elegant tent decors. Whether it's a grand wedding, a
+                    corporate event, or an intimate family gathering, we have spent years perfecting every detail to
+                    ensure your special day is truly unforgettable.
+                </p>
+            </div>
+        </section>
+
+        <!-- Hall Features -->
+        <section class="features bg-light section-padding" data-aos="fade-up">
+            <div class="container text-center">
+                <h2 class="section-title">Hall <span>Amenities</span></h2>
+                <div class="title-underline"></div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-crown"></i></div>
+                        <h3>Elegant Interior</h3>
+                        <p>Beautifully designed hall setup.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-car"></i></div>
+                        <h3>Parking Available</h3>
+                        <p>Hassle-free parking space.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+                        <h3>Stage Setup Available</h3>
+                        <p>Customizable stage decorations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-broom"></i></div>
+                        <h3>Spotless Clean</h3>
+                        <p>Maintained restrooms & halls.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hall Gallery -->
+        <section class="gallery section-padding">
+            <div class="container text-center">
+                <h2 class="section-title">Hall <span>Gallery</span></h2>
+                <div class="title-underline"></div>
+                <div class="gallery-wrapper">
+                    <div class="gal-item"><img src="images/photo1.jpg" alt="Hall"></div>
+                    <div class="gal-item"><img src="images/photo2.jpg" alt="Hall"></div>
+                    <div class="gal-item"><img src="images/photo3.jpg" alt="Stage"></div>
+                    <div class="gal-item"><img src="images/photo4.jpg" alt="Seating"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hall Pricing -->
+        <section class="pricing bg-dark section-padding">
+            <div class="container text-center">
+                <h2 class="section-title text-white">Hall <span>Packages</span></h2>
+                <div class="title-underline"></div>
+                <div class="pricing-cards">
+                    <div class="pricing-card dark-card">
+                        <h3>Morning Package</h3>
+                        <div class="price">₹9,500</div>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-sun"></i> Morning Event Access</li>
+                            <li><i class="fa-solid fa-check"></i> Standard Seating Included</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card dark-card">
+                        <h3>Evening Package</h3>
+                        <div class="price">₹10,500</div>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-moon"></i> Evening Event Access</li>
+                            <li><i class="fa-solid fa-check"></i> Standard Seating Included</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card gold-card featured">
+                        <div class="badge" style="background:#000;">Best Value</div>
+                        <h3>Premium Package</h3>
+                        <div class="price" style="color:#000;">₹500 <span
+                                style="font-size: 16px; font-weight: normal; color: #333;">/ plate</span></div>
+                        <ul class="pricing-features" style="color:#333;">
+                            <li style="color:#333;"><i class="fa-solid fa-utensils"></i> Hall Included with Catering
+                                Order
+                            </li>
+                            <li style="color:#333;"><i class="fa-solid fa-check"></i> Main Course, Appetizers & Drink
+                            </li>
+                            <li style="color:#333;"><i class="fa-solid fa-check"></i> Minimum order 100 plates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Showcase -->
+        <section class="reviews section-padding bg-light" data-aos="fade-up">
+            <div class="container text-center">
+                <h2 class="section-title">Client <span>Reviews</span></h2>
+                <div class="title-underline"></div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Absolutely amazing venue! The hall was spacious, the lighting was
+                            perfect, and the Plaza Caterers food was the highlight of our entire wedding."</p>
+                        <h4>- Mohammed Zaid</h4>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Booked them for my brother's reception. The catering package was
+                            incredible. Huge thanks for the flawless stage decoration!"</p>
+                        <h4>- Sameera Khan</h4>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Beautiful party hall. Parking was completely hassle-free, and the
+                            management is incredibly cooperative and polite. Highly recommend."</p>
+                        <h4>- Rakesh Gowda</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map -->
+        <section class="location-map" data-aos="fade-up" style="padding:40px 20px; background:var(--white);">
+            <div class="container text-center">
+                <h2 class="section-title">Find <span>Us</span></h2>
+                <div class="title-underline"></div>
+                <iframe
+                    src="https://maps.google.com/maps?q=Plaza%20Party%20Hall%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Hall Enquiry Form -->
+        <section id="enquiry-hall" class="enquiry-section section-padding text-center">
+            <div class="container">
+                <h2 class="section-title text-white">Book <span>Party Hall</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-desc" style="color:#ccc;">Fill this form and we'll get back to you within minutes!</p>
+                <div class="enquiry-form-container">
+                    <form id="form-hall" onsubmit="submitHallForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>👤 Your Name</label>
+                                <input type="text" id="hall-name" placeholder="E.g. Mohammed Ali" required>
+                            </div>
+                            <div class="form-group">
+                                <label>📱 Phone Number</label>
+                                <input type="tel" id="hall-phone" placeholder="E.g. 98765 43210" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>🎉 What is the function? <span class="label-hint">(Select one)</span></label>
+                                <select id="hall-event" required>
+                                    <option value="" disabled selected>-- Choose your event --</option>
+                                    <option value="Wedding">💒 Wedding / Nikah</option>
+                                    <option value="Engagement">💍 Engagement</option>
+                                    <option value="Reception">🥂 Reception</option>
+                                    <option value="Birthday Party">🎂 Birthday Party</option>
+                                    <option value="Corporate Event">💼 Corporate / Office Event</option>
+                                    <option value="Family Gathering">👨‍👩‍👧‍👦 Family Gathering</option>
+                                    <option value="Other">📋 Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>👥 How many guests? <span class="label-hint">(Approx.)</span></label>
+                                <input type="number" id="hall-guests" placeholder="E.g. 200" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>📅 When is your event?</label>
+                            <input type="date" id="hall-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>📝 Any special requests? <span class="label-hint">(Optional — decorations, DJ, food
+                                    etc.)</span></label>
+                            <textarea id="hall-notes"
+                                placeholder="E.g. Need stage decoration, DJ setup, 2 AC halls..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-brands fa-whatsapp"></i> Send Enquiry via WhatsApp
+                        </button>
+                        <p class="form-note">Your details will be sent directly to our team on WhatsApp</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hall CTA Footer -->
+        <footer class="footer bg-white section-padding" style="border-top: 1px solid #ccc;">
+            <div class="container text-center">
+                <h2>Book Plaza Party Hall</h2>
+                <p>Call or WhatsApp to check availability.</p>
+                <div style="margin-top:20px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                    <a href="tel:+918971525559" class="btn btn-primary"><i class="fa-solid fa-phone"></i> +91 89715
+                        25559</a>
+                    <a href="https://wa.me/918971525559?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20booking%20the%20Hall."
+                        class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                    <a href="https://www.google.com/maps/search/Plaza+Party+Hall+Bangalore/" target="_blank"
+                        class="btn btn-google"><i class="fa-brands fa-google"></i> See Our Reviews</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+    <!-- ============================================== -->
+    <!-- VIEW 2: CATERING VIEW                          -->
+    <!-- ============================================== -->
+    <main id="view-catering" class="view hidden">
+
+        <!-- Catering Hero -->
+        <section class="hero hero-dark">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="images/plaza caterring  openning video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Plaza Caterers</h1>
+                <p>Since 1996 | Serving the most delicious food for your weddings.</p>
+                <div class="hero-badge"
+                    style="display:inline-block; margin-bottom:30px; background:var(--primary-color); color:#000; padding:10px 20px; border-radius:50px; font-weight:bold;">
+                    ★ Minimum Orders Starting from just 5kg! ★
+                </div>
+                <div class="hero-buttons">
+                    <a href="tel:+917204189449" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call To
+                        Order</a>
+                    <a href="https://wa.me/917204189449?text=Hello%20Plaza%20Caterers,%20I%20would%20like%20to%20enquire%20about%20catering%20services."
+                        target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order via
+                        WhatsApp</a>
+                    <a href="#enquiry-catering" class="btn btn-enquire"
+                        onclick="scrollToForm(event, 'enquiry-catering')"><i class="fa-solid fa-pen-to-square"></i>
+                        Enquire Now</a>
+                    <a href="https://www.google.com/maps/search/Plaza+Party+Hall+Bangalore/" target="_blank"
+                        class="btn btn-google"><i class="fa-brands fa-google"></i> See Our Reviews</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catering Menu Packages -->
+        <section class="catering section-padding bg-light">
+            <div class="container text-center">
+                <h2 class="section-title">Catering <span>Packages</span></h2>
+                <div class="title-underline"></div>
+                <div class="pricing-cards cater-cards">
+                    <!-- Silver -->
+                    <div class="pricing-card white-card text-left">
+                        <div class="cater-img"><img src="images/silver_pkg.jpg" alt="Silver Package - Biryani"></div>
+                        <h3>SILVER Package</h3>
+                        <div class="price" style="color:var(--primary-color)">₹1,50,000/-</div>
+                        <ul class="cater-features">
+                            <li>Mutton briyani, Brinjal curry, Curd raita, Muzzaffar sweet, Carrot sweet</li>
+                            <li><strong>STARTER'S:</strong> Chicken Sheek, Chilli Chicken dry</li>
+                            <li><strong>Gravy's:</strong> Mehti chicken gravy (Romali Roti & sewi)</li>
+                            <li><strong>FUN STALL'S:</strong> COOL DRINKS, PAAN BEEDA, TEA, ICE CREAM GULKHAN</li>
+                            <li><strong>Groom Table Set up:</strong> Chicken full Tandoor, Chicken leg piece, Tetar,
+                                fish fry, Tin Cool drinks, Glass set up</li>
+                        </ul>
+                    </div>
+                    <!-- Golden -->
+                    <div class="pricing-card gold-card featured text-left">
+                        <div class="badge" style="background:#000;">Most Popular</div>
+                        <div class="cater-img"><img src="images/golden_pkg.jpg" alt="Golden Package - Curry & Naan">
+                        </div>
+                        <h3>GOLDEN Package</h3>
+                        <div class="price" style="color:#000;">₹1,75,000/-</div>
+                        <ul class="cater-features">
+                            <li>Mutton briyani, Brinjal curry, Curd raita, Narrow kaddu, Dal sweet</li>
+                            <li><strong>STARTER'S:</strong> Chicken Sheek kebab, Fish Crispy, Double dum kebab</li>
+                            <li><strong>Gravy's:</strong> Malai chicken gravy (with Tandori Roti & sewi), Fresh salad
+                            </li>
+                            <li><strong>FUN STALL'S:</strong> Cool drinks, Paan beeda, Tea & Sulaimani, Ice cream
+                                Arabian delight, Fruit stall</li>
+                            <li><strong>Groom Table Set up:</strong> Tandoor full chicken, Chicken loli pop, Tetar fry,
+                                Fish fry, Mutton chops, Sash lick, Tin Cool drinks, Glass set up</li>
+                        </ul>
+                    </div>
+                    <!-- Diamond -->
+                    <div class="pricing-card white-card text-left">
+                        <div class="cater-img"><img src="images/diamond_pkg.jpg" alt="Diamond Package - Royal Spread">
+                        </div>
+                        <h3>DIAMOND Package</h3>
+                        <div class="price" style="color:var(--primary-color)">₹2,20,000/-</div>
+                        <ul class="cater-features">
+                            <li>Mutton briyani, Brinjal curry, Curd raita, Kashmiri fruit sweet, Hyderabdi firni</li>
+                            <li><strong>STARTER'S:</strong> Chicken malai tika, Chilli Prawns, fish fry, chicken sheek
+                            </li>
+                            <li><strong>Gravy's:</strong> Kadai chicken gravy with Coin parota OR (any) & sewi, Veg
+                                green salad</li>
+                            <li><strong>FUN STALL'S:</strong> High tea stall, Red velvet ice, Paan beeda, Cool drinks,
+                                Fruit stall, pop corn, jalebi rabdi, pani puri stall</li>
+                            <li><strong>Groom Table Set up:</strong> Mutton Sara Bakra, Prawns, Fish crispy, Sash lick,
+                                Alfaham Chicken, Tetar, Tin Cool drinks, Set up</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catering Gallery -->
+        <section class="gallery section-padding text-center">
+            <div class="container">
+                <h2 class="section-title">Food & Dining <span>Gallery</span></h2>
+                <div class="title-underline"></div>
+                <div class="gallery-wrapper">
+                    <div class="gal-item"><img src="images/media__1775113430724.jpg" alt="Dining Setup"></div>
+                    <div class="gal-item"><img src="images/media__1775113436237.jpg" alt="Dining Flow"></div>
+                    <div class="gal-item gal-wide"><img src="images/media__1775113440843.jpg" alt="Catering Special">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Showcase -->
+        <section class="reviews section-padding bg-white" data-aos="fade-up">
+            <div class="container text-center">
+                <h2 class="section-title">Client <span>Reviews</span></h2>
+                <div class="title-underline"></div>
+                <div class="reviews-grid">
+                    <div class="review-card" style="background:var(--light-bg)">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"The biryani was phenomenal! Every single guest asked who the caterers
+                            were. Minimum 5kg order rule makes it super convenient for small parties too."</p>
+                        <h4>- Faizan Ahmed</h4>
+                    </div>
+                    <div class="review-card" style="background:var(--light-bg)">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Best catering service in town. They handled my sister's walima
+                            flawlessly. The service was prompt and the food was served piping hot."</p>
+                        <h4>- Nida Fatima</h4>
+                    </div>
+                    <div class="review-card" style="background:var(--light-bg)">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"We took the Diamond Package for our corporate event and it was a royal
+                            feast! Highly recommend their chicken gravy and live grill stalls."</p>
+                        <h4>- Vikram Singh</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map -->
+        <section class="location-map" data-aos="fade-up" style="padding:40px 20px; background:var(--light-bg);">
+            <div class="container text-center">
+                <h2 class="section-title">Find <span>Us</span></h2>
+                <div class="title-underline"></div>
+                <iframe
+                    src="https://maps.google.com/maps?q=Plaza%20Party%20Hall%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Catering Enquiry Form -->
+        <section id="enquiry-catering" class="enquiry-section section-padding text-center">
+            <div class="container">
+                <h2 class="section-title text-white">Order <span>Catering</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-desc" style="color:#ccc;">Tell us about your event — we'll prepare the perfect feast!
+                </p>
+                <div class="enquiry-form-container">
+                    <form id="form-catering" onsubmit="submitCateringForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>👤 Your Name</label>
+                                <input type="text" id="cater-name" placeholder="E.g. Ahmed Khan" required>
+                            </div>
+                            <div class="form-group">
+                                <label>📱 Phone Number</label>
+                                <input type="tel" id="cater-phone" placeholder="E.g. 98765 43210" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>🎉 What is the function for?</label>
+                                <select id="cater-event" required>
+                                    <option value="" disabled selected>-- Choose your event --</option>
+                                    <option value="Wedding / Nikah">💒 Wedding / Nikah</option>
+                                    <option value="Walima">🍽️ Walima</option>
+                                    <option value="Engagement">💍 Engagement</option>
+                                    <option value="Birthday Party">🎂 Birthday Party</option>
+                                    <option value="Family Gathering">👨‍👩‍👧‍👦 Family Gathering</option>
+                                    <option value="Corporate Event">💼 Corporate / Office Event</option>
+                                    <option value="Other">📋 Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>🍽️ Which package do you want?</label>
+                                <select id="cater-package" required>
+                                    <option value="" disabled selected>-- Choose a package --</option>
+                                    <option value="Silver (₹1,50,000)">🥈 Silver Package — ₹1,50,000</option>
+                                    <option value="Golden (₹1,75,000)">🥇 Golden Package — ₹1,75,000</option>
+                                    <option value="Diamond (₹2,20,000)">💎 Diamond Package — ₹2,20,000</option>
+                                    <option value="Not Sure / Custom">🤔 Not Sure / Custom Order</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>👥 How many guests? <span class="label-hint">(Approx.)</span></label>
+                                <input type="number" id="cater-guests" placeholder="E.g. 300" required>
+                            </div>
+                            <div class="form-group">
+                                <label>📅 When do you need it delivered?</label>
+                                <input type="date" id="cater-date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>📍 Delivery Location <span class="label-hint">(Area / Hall name)</span></label>
+                            <input type="text" id="cater-location" placeholder="E.g. MM Layout, Bangalore" required>
+                        </div>
+                        <div class="form-group">
+                            <label>📝 Any special food requests? <span class="label-hint">(Optional — extra items,
+                                    allergies, etc.)</span></label>
+                            <textarea id="cater-notes"
+                                placeholder="E.g. Extra biryani 10kg, no prawns, need jalebi stall..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-brands fa-whatsapp"></i> Send Order Enquiry via WhatsApp
+                        </button>
+                        <p class="form-note">Your order details will be sent directly to Plaza Caterers on WhatsApp</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catering CTA Footer -->
+        <footer class="footer bg-dark section-padding text-white text-center">
+            <div class="container">
+                <h2 class="text-white">Order Plaza Catering Today</h2>
+                <p style="color:#ccc;">Minimum 5kg orders accepted!</p>
+                <div style="margin-top:20px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                    <a href="tel:+917204189449" class="btn btn-primary"><i class="fa-solid fa-phone"></i> +91 72041
+                        89449</a>
+                    <a href="https://wa.me/917204189449?text=Hello%20Plaza%20Caterers,%20I%20would%20like%20to%20enquire%20about%20catering%20services."
+                        class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                    <a href="https://www.google.com/maps/search/Plaza+Party+Hall+Bangalore/" target="_blank"
+                        class="btn btn-google"><i class="fa-brands fa-google"></i> See Our Reviews</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+    <!-- ============================================== -->
+    <!-- VIEW 3: TENT HOUSE & FURNITURE                 -->
+    <!-- ============================================== -->
+    <main id="view-tent" class="view hidden">
+
+        <!-- Tent Hero -->
+        <section class="hero hero-dark">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="images/plaza tent openning video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Plaza Tent House</h1>
+                <p>Complete elegant furniture, stage design, and premium setups <br>designed to make your occasion stand
+                    out.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+918553385690" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call For
+                        Decor</a>
+                    <a href="https://wa.me/918553385690?text=Hello%20Plaza%20Tent%20House,%20I%20would%20like%20to%20enquire%20about%20decor%20and%20furniture."
+                        target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+                    <a href="#enquiry-tent" class="btn btn-enquire" onclick="scrollToForm(event, 'enquiry-tent')"><i
+                            class="fa-solid fa-pen-to-square"></i> Enquire Now</a>
+                    <a href="https://www.google.com/maps/search/Plaza+Party+Hall+Bangalore/" target="_blank"
+                        class="btn btn-google"><i class="fa-brands fa-google"></i> See Our Reviews</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features bg-light section-padding text-center">
+            <div class="container">
+                <h2 class="section-title">Our Decor <span>Services</span></h2>
+                <div class="title-underline"></div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-chair"></i></div>
+                        <h3>Premium Seating</h3>
+                        <p>Royal chairs & dining setups.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+                        <h3>Stage Design</h3>
+                        <p>Custom backgrounds & floral decor.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>Groom Table</h3>
+                        <p>Exclusive decorated dining tables.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-lights-holiday"></i></div>
+                        <h3>Lighting</h3>
+                        <p>Beautiful ambient lighting setups.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tent Gallery -->
+        <section class="gallery section-padding text-center">
+            <div class="container">
+                <h2 class="section-title">Tent / Furniture <span>Gallery</span></h2>
+                <div class="title-underline"></div>
+                <div class="gallery-wrapper">
+                    <div class="gal-item"><img src="images/tent_floral_stage.jpg" alt="Floral Wedding Stage"></div>
+                    <div class="gal-item"><img src="images/tent_mandap_stage.jpg" alt="Mandap Stage Setup"></div>
+                    <div class="gal-item"><img src="images/tent_grand_hall.jpg" alt="Grand Hall Seating"></div>
+                    <div class="gal-item"><img src="images/tent_gold_tables.jpg" alt="Gold Table Setup"></div>
+                    <div class="gal-item"><img src="images/tent_red_bow_chairs.jpg" alt="Red Bow Chair Covers"></div>
+                    <div class="gal-item"><img src="images/tent_outdoor_blue.jpg" alt="Outdoor Tent Setup"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Showcase -->
+        <section class="reviews section-padding bg-white" data-aos="fade-up">
+            <div class="container text-center">
+                <h2 class="section-title">Client <span>Reviews</span></h2>
+                <div class="title-underline"></div>
+                <div class="reviews-grid">
+                    <div class="review-card" style="background:var(--light-bg)">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Plaza Tent House transformed our venue completely! The floral stage
+                            decoration was straight out of a movie."</p>
+                        <h4>- Salman Razak</h4>
+                    </div>
+                    <div class="review-card" style="background:var(--light-bg)">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Very professional team. They arrived early, set up the entire furniture
+                            and lighting perfectly, and there was no hassle."</p>
+                        <h4>- Karthik M</h4>
+                    </div>
+                    <div class="review-card" style="background:var(--light-bg)">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Loved the royal chairs and the premium seating setup they provided for
+                            my engagement. Definitely booking them again for the wedding."</p>
+                        <h4>- Ayesha Begum</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map -->
+        <section class="location-map" data-aos="fade-up" style="padding:40px 20px; background:var(--light-bg);">
+            <div class="container text-center">
+                <h2 class="section-title">Find <span>Us</span></h2>
+                <div class="title-underline"></div>
+                <iframe
+                    src="https://maps.google.com/maps?q=Plaza%20Party%20Hall%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Tent House Enquiry Form -->
+        <section id="enquiry-tent" class="enquiry-section section-padding text-center" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title text-white">Book <span>Tent House</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-desc" style="color:#ccc;">Tell us what you need — we'll set it up beautifully!</p>
+                <div class="enquiry-form-container">
+                    <form id="form-tent" onsubmit="submitTentForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>👤 Your Name</label>
+                                <input type="text" id="tent-name" placeholder="E.g. Syed Anas" required>
+                            </div>
+                            <div class="form-group">
+                                <label>📱 Phone Number</label>
+                                <input type="tel" id="tent-phone" placeholder="E.g. 98765 43210" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>🎉 What is the occasion?</label>
+                                <select id="tent-event" required>
+                                    <option value="" disabled selected>-- Choose your event --</option>
+                                    <option value="Wedding / Nikah">💒 Wedding / Nikah</option>
+                                    <option value="Engagement">💍 Engagement</option>
+                                    <option value="Reception">🥂 Reception</option>
+                                    <option value="Birthday Party">🎂 Birthday Party</option>
+                                    <option value="Religious Function">🕌 Religious Function</option>
+                                    <option value="Other">📋 Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>📅 When is your event?</label>
+                                <input type="date" id="tent-date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>🪑 What items do you need? <span class="label-hint">(Select all that
+                                    apply)</span></label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="Chairs" name="tent-items"><span>🪑
+                                        Chairs</span></label>
+                                <label><input type="checkbox" value="Tables" name="tent-items"><span>🍽️
+                                        Tables</span></label>
+                                <label><input type="checkbox" value="Stage Decoration" name="tent-items"><span>🌸 Stage
+                                        Decoration</span></label>
+                                <label><input type="checkbox" value="Tent / Canopy" name="tent-items"><span>⛺ Tent /
+                                        Canopy</span></label>
+                                <label><input type="checkbox" value="Lighting" name="tent-items"><span>💡
+                                        Lighting</span></label>
+                                <label><input type="checkbox" value="Full Setup" name="tent-items"><span>✨ Full Setup
+                                        (Everything)</span></label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>👥 How many guests? <span class="label-hint">(Approx.)</span></label>
+                                <input type="number" id="tent-guests" placeholder="E.g. 500" required>
+                            </div>
+                            <div class="form-group">
+                                <label>📍 Event Location <span class="label-hint">(Area / Address)</span></label>
+                                <input type="text" id="tent-location" placeholder="E.g. JP Nagar, Bangalore" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>📝 Any special requirements? <span class="label-hint">(Optional)</span></label>
+                            <textarea id="tent-notes"
+                                placeholder="E.g. Red & white theme, sofa for stage, flower arch..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-brands fa-whatsapp"></i> Send Enquiry via WhatsApp
+                        </button>
+                        <p class="form-note">Your requirements will be sent directly to Plaza Tent House on WhatsApp</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tent CTA Footer -->
+        <footer class="footer bg-white section-padding text-center" style="border-top: 1px solid #ccc;">
+            <div class="container">
+                <h2>Hire Our Tent House Services</h2>
+                <p>Contact us to discuss your event's theme.</p>
+                <div style="margin-top:20px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                    <a href="tel:+918553385690" class="btn btn-primary"><i class="fa-solid fa-phone"></i> +91 85533
+                        85690</a>
+                    <a href="https://wa.me/918553385690?text=Hello%20Plaza%20Tent%20House,%20I%20would%20like%20to%20enquire%20about%20decor%20and%20furniture."
+                        class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                    <a href="https://www.google.com/maps/search/Plaza+Party+Hall+Bangalore/" target="_blank"
+                        class="btn btn-google"><i class="fa-brands fa-google"></i> See Our Reviews</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Global Floating Action Buttons -->
+    <a href="https://wa.me/918971525559?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+        class="floating-btn wa-float hidden" target="_blank" title="WhatsApp Us">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:+918971525559" class="floating-btn call-float hidden" title="Call Us">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    <script src="script.js?v=6"></script>
+</body>
+
+</html>
