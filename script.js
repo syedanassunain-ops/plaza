@@ -38,7 +38,7 @@ function showView(viewId) {
             callFloat.href = 'tel:+917204189449';
         } else {
             // view-hall or default
-            waFloat.href = 'https://wa.me/918971525559?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20your%20services.';
+            waFloat.href = 'https://wa.me/917204189449?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20your%20services.';
             callFloat.href = 'tel:+918971525559';
         }
     }
@@ -77,7 +77,7 @@ function showEntry() {
     if (waFloat && callFloat) {
         waFloat.classList.add('hidden');
         callFloat.classList.add('hidden');
-        waFloat.href = 'https://wa.me/918971525559?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20your%20services.';
+        waFloat.href = 'https://wa.me/917204189449?text=Hello%20Plaza%20Party%20Hall,%20I%20would%20like%20to%20enquire%20about%20your%20services.';
         callFloat.href = 'tel:+918971525559';
     }
 
